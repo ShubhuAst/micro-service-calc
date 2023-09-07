@@ -3,32 +3,41 @@ version: '3.9'
 services:
   cube:
     build:
-      context: /Users/shubhu/Desktop/Projects/calculator/cube
-      dockerfile: /Users/shubhu/Desktop/Projects/calculator/cube/Dockerfile
+      context: ./cube
+      dockerfile: Dockerfile
+    hostname: cube
     restart: always
     ports:
       - "8081:8081"
+    networks:
+      - my-custom-network
 
   square:
     build:
-      context: /Users/shubhu/Desktop/Projects/calculator/Square
-      dockerfile: /Users/shubhu/Desktop/Projects/calculator/Square/Dockerfile
+      context: ./Square
+      dockerfile: Dockerfile
+    hostname: square
     restart: always
     ports:
       - "8082:8082"
+    networks:
+      - my-custom-network
 
   fibonacci:
     build:
-      context: /Users/shubhu/Desktop/Projects/calculator/fibonacci
-      dockerfile: /Users/shubhu/Desktop/Projects/calculator/fibonacci/Dockerfile
+      context: ./fibonacci
+      dockerfile: Dockerfile
+    hostname: fibonacci
     restart: always
     ports:
       - "8083:8083"
+    networks:
+      - my-custom-network
 
   front_end:
     build:
-      context: /Users/shubhu/Desktop/Projects/calculator/front-end
-      dockerfile: /Users/shubhu/Desktop/Projects/calculator/front-end/Dockerfile
+      context: ./front-end
+      dockerfile: Dockerfile
     restart: always
     ports:
       - "8086:80"
@@ -36,3 +45,9 @@ services:
       - cube
       - square
       - fibonacci
+    networks:
+      - my-custom-network
+
+networks:
+  my-custom-network:
+    driver: bridge

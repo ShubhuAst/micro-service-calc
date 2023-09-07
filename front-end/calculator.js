@@ -13,7 +13,7 @@ function calculateSquare() {
       document.getElementById("result").innerHTML = `The square of ${input} is ${square}.`
     },
     error: function (jqXHR, textStatus) {
-      console.error(error)
+      console.error(jqXHR)
     }
 });
 }
@@ -32,7 +32,7 @@ function calculateCube() {
         document.getElementById("result").innerHTML = `The cube of ${input} is ${cube}.`;
     },
     error: function (jqXHR, textStatus) {
-      console.error(error)
+      console.error(jqXHR)
     }
 });
 }
@@ -51,7 +51,7 @@ function calculateFibonacci() {
       document.getElementById("result").innerHTML = `The Fibonacci sequence up to ${input} is ${fibonacci}.`;
     },
     error: function (jqXHR, textStatus) {
-      console.error(error)
+      console.error(jqXHR)
     }
 });
 }
