@@ -12,8 +12,9 @@ function calculateSquare() {
       const square = result['result'];
       document.getElementById("result").innerHTML = `The square of ${input} is ${square}.`
     },
-    error: function (jqXHR, textStatus) {
-      console.error(jqXHR)
+    error: function(xhr, status, error) {
+      console.error('Ajax request failed with status:', status);
+      console.error('Error:', error);
     }
 });
 }
@@ -31,8 +32,9 @@ function calculateCube() {
         const cube = result['result'];
         document.getElementById("result").innerHTML = `The cube of ${input} is ${cube}.`;
     },
-    error: function (jqXHR, textStatus) {
-      console.error(jqXHR)
+    error: function(xhr, status, error) {
+      console.error('Ajax request failed with status:', status);
+      console.error('Error:', error);
     }
 });
 }
@@ -50,8 +52,9 @@ function calculateFibonacci() {
       const fibonacci = result['fibonacci'];
       document.getElementById("result").innerHTML = `The Fibonacci sequence up to ${input} is ${fibonacci}.`;
     },
-    error: function (jqXHR, textStatus) {
-      console.error(jqXHR)
+    error: function(xhr, status, error) {
+      console.error('Ajax request failed with status:', status);
+      console.error('Error:', error);
     }
 });
 }
